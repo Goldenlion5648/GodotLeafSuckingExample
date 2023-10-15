@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://2rx268hi4wsu"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_54wub"]
+[ext_resource type="PackedScene" uid="uid://ma6ndpqljo2a" path="res://sucker.tscn" id="2_yghgf"]
+[ext_resource type="Script" path="res://spawner.gd" id="3_jhy0x"]
+[ext_resource type="PackedScene" uid="uid://du1rsyb76o5j3" path="res://leaf.tscn" id="4_fde1h"]
+[ext_resource type="Script" path="res://score_label.gd" id="5_6xo1l"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_54wub")
+sucker = ExtResource("2_yghgf")
+
+[node name="spawner" type="Marker2D" parent="."]
+script = ExtResource("3_jhy0x")
+leaf_to_spawn = ExtResource("4_fde1h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 60
+text = "Score: 0"
+script = ExtResource("5_6xo1l")

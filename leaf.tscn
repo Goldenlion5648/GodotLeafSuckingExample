@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://du1rsyb76o5j3"]
+
+[ext_resource type="Script" path="res://leaf.gd" id="1_ggtb1"]
+[ext_resource type="Script" path="res://leaf_changer.gd" id="1_gjm0q"]
+[ext_resource type="Texture2D" uid="uid://c8dv5l20prs4y" path="res://textures/brown_leaf.png" id="1_s72v7"]
+[ext_resource type="Texture2D" uid="uid://7byer8j8bq3v" path="res://textures/red_leaf.png" id="3_cxtj3"]
+[ext_resource type="Texture2D" uid="uid://c5bbpyvpn8kx5" path="res://textures/yellow_leaf.png" id="4_trb6c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_etx5h"]
+radius = 38.3275
+
+[node name="leaf" type="CharacterBody2D"]
+collision_mask = 0
+script = ExtResource("1_ggtb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_etx5h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_s72v7")
+script = ExtResource("1_gjm0q")
+textures = Array[Texture2D]([ExtResource("1_s72v7"), ExtResource("3_cxtj3"), ExtResource("4_trb6c")])

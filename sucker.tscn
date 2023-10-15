@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ma6ndpqljo2a"]
+
+[ext_resource type="Script" path="res://sucker.gd" id="1_3iuai"]
+[ext_resource type="Texture2D" uid="uid://c6djbx17dlk76" path="res://textures/circle_spiral.png" id="1_4ewwm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e7ogu"]
+radius = 80.0
+
+[node name="sucker" type="Area2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_3iuai")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_4ewwm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_e7ogu")
